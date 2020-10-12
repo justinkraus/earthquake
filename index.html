@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Sansita+Swashed&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Open Sans', sans-serif;
+            }
+/*            .area {                         
+            fill: url(#area-gradient);                  
+            stroke-width: 0px;          
+            }*/
+            .chart{
+              fill: url(#header-shape-gradient) #fff;
+            }
+
+
+/*            svg background gradient start */
+            .stop-1 {
+                stop-color: #9a6642;  /* Indigo */
+            }
+            .stop-2 {
+                stop-color: #94674a;  /* Teal */
+            }
+            .stop-3 {
+                stop-color: #8d6951;  /* Teal */
+            }
+            .stop-4 {
+                stop-color: #866a58;  /* Teal */
+            }
+            .stop-5 {
+                stop-color: #7f6c60;  /* Teal */
+            }
+            .stop-6 {
+                stop-color: #776d67;  /* Teal */
+            }
+            .stop-7 {
+                stop-color: #6e6e6e;  /* Teal */
+            }
+/*            .stop-8 {
+                stop-color: #7D441D;  
+            }*/
+
+            .filled {
+                fill: url(#mainGradient);
+            }
+
+/*            .outlined {
+                fill:   none;
+                stroke: url(#mainGradient);
+                stroke-width: 4;
+            }*/
+
+            .tick{
+                fill: black;
+            }
+/*            svg background gradient end */
+
+/*            body{
+                background: black;
+                color: white;
+                margin: 1em auto 4em auto;
+                position: relative;
+                width: 1200px;
+                text-align: center; 
+            }*/
+
+            .circleSizes {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 20px;
+            text-align: center;
+            justify-content: center;
+            }
+            div.tooltip {   
+            position: absolute;         
+            text-align: center;                 
+            padding: 2px;               
+            font: 12px sans-serif;      
+            background: lightsteelblue; 
+            border: 0px;        
+            border-radius: 8px;         
+            pointer-events: none;           
+            }
+            .legend {
+            display: grid;
+            grid-template-columns: 30px 42px;
+            grid-gap: 10px;
+            grid-auto-rows: 30px;
+            text-align: center;
+            font-size: 10px;
+            }
+            .tt1{
+                grid-column: 1 / 2;
+                grid-row: 1;
+            }
+            .tt2{
+                grid-column: 2 / 2;
+                grid-row: 1;
+            }
+            .tt3{
+                grid-column: 1 / 2;
+                grid-row: 2;
+            }
+            .tt4{
+                grid-column: 2 / 2;
+                grid-row: 2;
+            }
+            .container{
+                display: flex;
+                flex-wrap: nowrap;
+                flex: 0 0 25em;
+            }
+            .overviewtext{
+                margin: 100px 500px 100px 150px;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="chart"></div>
+            <div class="overviewtext" >
+            <h3>Data</h3>
+            <p>This chart visualizes seismic activity and the depth of the event. Earthquakes occur within the crust of the earth, approximately 800 kilometers deep. The strength of shaking from an earthquake diminishes with increasing distance from the earthquake's source, so the strength of shaking at the surface is considerably more than a 500km seismic event.
+                The data was taken from the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php">USGS earthquake monitoring website</a>, between September 6th to October 6th,
+                and represents any seismic activity recorded by the United States National Seismic Network (FDSN code US), a collection of monitoring stations located primarily within the Continential United States.</p>
+            <p>Tooltip information shows the magnitude, location, date and time of the earthquake.</p>
+            <h3>Legend</h3>
+            <div class="legend">
+                <div class="tt1">
+                    <svg height="50" width="50">
+                    <circle cx="15" cy="25" r="3" stroke="darkgrey" stroke-width="1" fill="blue" >
+                    </svg>
+                </div>
+                <div class="tt2">
+                    <svg height="50" width="50">
+                    <circle cx="22" cy="25" r="20" stroke="darkgrey" stroke-width="1" fill="red" >
+                    </svg>
+                </div>
+                <div class="tt3">
+                    <p>Lower Energy</p>
+                </div>
+                <div class="tt4">
+                    <p>Higher Energy</p>
+                </div>
+            </div>
+            <p>Circle sizes and colors correspond to the magnitude of the energy released from the event. Sizes have been converted from the Richter measures on the 1-10 scale and converted into their energy by a logarthmic formula developed by Gutenberg and Richter. Because of the logarthmic nature of the formula, energy output is exponentially larger than the Richter measure by approximate orders of 10 by each 1 point on the Richter scale.</p>
+            <h3>Depth</h3>
+            <p>The vertical axis corresponds to kilometers below earth of the seismic event. As shown by the silver histogram on the right of the chart, most earthquakes occur at 10km which is used as a "fixed depth" placeholder value by the USGS when recording seismic activity that has poor data. This was previously 33km but studies have supported 10km as a reliable depth. Anything under 70km is considered in the shallow range of the earth's surface, earthquakes deeper than 70km are known as deep-focus earthquakes which represent massive slabs of lithosphere sinking into the earth's mantle.
+            </p>
+            <p>
+            For an overview of the process behind completing this chart please see here.
+            </p>
+            </div>
+        </div>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+        <script src="main_3.js"></script>
+    </body>
+</html>
