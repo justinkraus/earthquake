@@ -11,9 +11,9 @@ As I was previously unfamiliar with earthquake data, I used Excel to observe dis
 
 Magnitude is measured on the Richter scale, a 1-10 logarithmic scale. The logarithmic aspect is important as it means the energy output rises exponentially as the measurements move up: a difference of one represents a thirty-fold increase in magnitude. 
 
-For the visualization, I decided I wanted to show the actual energy output of the seismic event versus the Richter measurement. To do this, I converted the Richter measurements to the energy output using [formulas found here](http://www.science.earthjay.com/instruction/HSU/2016_spring/GEOL_460/reports/460_eq_reports.pdf).
+For the visualization, I decided I wanted to show the actual energy output of the seismic event versus the Richter measurement. To do this, I converted the Richter measurements to the energy output using the [formulas here](http://www.science.earthjay.com/instruction/HSU/2016_spring/GEOL_460/reports/460_eq_reports.pdf).
 
-![](https://lh6.googleusercontent.com/0_yVYnpinjxdH5olMM70mr5CWhj2aA7vFDTNw54sEBK4tG16hxbesZFM4CWlNa-dXZTP7w3WNGGkHdCT2AGMoY-wY7ehJkc6R-_KcXVFrl85YXyVJ_PdOvDjYbT9y62HoVuUkehk)
+![](https://lh6.googleusercontent.com/0_yVYnpinjxdH5olMM70mr5CWhj2aA7vFDTNw54sEBK4tG16hxbesZFM4CWlNa-dXZTP7w3WNGGkHdCT2AGMoY-wY7ehJkc6R-_KcXVFrl85YXyVJ_PdOvDjYbT9y62HoVuUkehk)  
 Formulas to convert Richter magnitude to energy
 
 ## Iteration 1
@@ -25,7 +25,8 @@ With the true energy output added to the dataset, I investigated what this would
  - Color shows magnitude of the event
 
 ![](https://lh6.googleusercontent.com/eSJl26m92_W6ir68X-vMEAd63QMZOFIDy-p-VGi_DExdRlfGtY2OjksqJyWqcbwNyW_6PaUICcKXDs1vAc6dYc6jWInBwpnG6SeB6_pFtetcECoGBm6zZquqksQjVSmOBfbtCkWG)
-[Interactive Tableau Public Gallery](https://public.tableau.com/profile/justin.k7646#!/vizhome/earthquake2_16020451824820/Sheet2)
+[Interactive Tableau Public Gallery](https://public.tableau.com/profile/justin.k7646#!/vizhome/earthquake2_16020451824820/Sheet2)  
+
 The majority of seismic activity is low-magnitude and occurs at a relatively shallow depth. What isn't apparent in the first iteration is that there are 13k+ seismic events being shown because there is a significant overlap of these points.
 
 ## Iteration 2
